@@ -9,7 +9,19 @@ const
 
 var
    TotalEkonomi,TotalTiket,TotalKeseluruhan,TotalBisnis,TotalEksekutif,Ekonomi,Bisnis,Eksekutif,Bayar,Kembalian:integer;
-   Uang,Jumlah:longint;
+   Uang:longint;
+
+function pecahan(UangDiFungsi, Angka: integer): integer;
+var
+   Jumlah: integer;
+begin
+     if UangDiFungsi >= Angka then
+        begin
+             Jumlah:=UangDiFungsi div Angka;
+             writeln('Rp. ',Angka,',- ada ',jumlah);
+             pecahan:=UangDiFungsi mod Angka;
+        end;
+end;
 
 begin
      textcolor(green);
@@ -44,68 +56,15 @@ begin
      writeln('=======================================');
      writeln(' ');
 
-     if Uang >= 100000 then
-        begin
-             Jumlah:=Uang div 100000;
-             writeln('Rp. 100000,- ada ',jumlah);
-             Uang:=uang mod 100000;
-        end;
-
-     if Uang >= 50000 then
-        begin
-             Jumlah:=Uang div 50000;
-             writeln('Rp. 50000,- ada ',jumlah);
-             Uang:=uang mod 50000;
-        end;
-
-     if Uang >= 20000 then
-        begin
-             Jumlah:=Uang div 20000;
-             writeln('Rp. 20000,- ada ', jumlah);
-             Uang:=uang mod 20000;
-        end;
-
-     if Uang >= 10000 then
-        begin
-             Jumlah:=Uang div 10000;
-             writeln('Rp. 10000,- ada ',jumlah);
-             Uang:=uang mod 10000;
-        end;
-
-     if Uang >= 5000 then
-        begin
-             Jumlah:=Uang div 5000;
-             writeln('Rp. 5000,- ada ',jumlah);
-             Uang:=uang mod 5000;
-        end;
-
-     if Uang >= 2000 then
-        begin
-             Jumlah:=Uang div 2000;
-             writeln('Rp. 2000,- ada ',jumlah);
-             Uang:=uang mod 2000;
-        end;
-
-    if Uang >= 1000 then
-        begin
-             Jumlah:=Uang div 1000;
-             writeln('Rp. 1000,- ada ',jumlah);
-             Uang:=uang mod 1000;
-        end;
-
-     if Uang >= 500 then
-        begin
-             Jumlah:=Uang div 500;
-             writeln('Rp. 500,- ada ',jumlah);
-             Uang:=uang mod 500;
-        end;
-
-     if Uang >= 100 then
-        begin
-             Jumlah:=Uang div 100;
-             writeln('Rp. 100,- ada ',jumlah);
-             Uang:=uang mod 100;
-        end;
+     Uang := pecahan(Uang,100000);
+     Uang := pecahan(Uang,50000);
+     Uang := pecahan(Uang,20000);
+     Uang := pecahan(Uang,10000);
+     Uang := pecahan(Uang,5000);
+     Uang := pecahan(Uang,2000);
+     Uang := pecahan(Uang,1000);
+     Uang := pecahan(Uang,500);
+     Uang := pecahan(Uang,100);
 
      if (uang <= 100) AND (uang > 0) then
         begin
